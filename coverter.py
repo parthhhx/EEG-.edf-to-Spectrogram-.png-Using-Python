@@ -4,14 +4,14 @@ import matplotlib.pyplot as plt
 from scipy.signal import spectrogram
 
 # Read EEG data from the EDF file
-f = pyedflib.EdfReader("/content/s14.edf")
+f = pyedflib.EdfReader("file_path") 
 num_channels = f.signals_in_file
 print(num_channels)
 
 sampling_rate = f.getSampleFrequencies()
 
 # Define the duration of each chunk in seconds
-chunk_duration = 2  # 2 seconds
+chunk_duration = 30 #you can adjust this variable according to the need
 
 # Calculate the number of samples in each chunk
 samples_per_chunk = int(chunk_duration * sampling_rate[0])  # Assuming all channels have the same sampling rate
